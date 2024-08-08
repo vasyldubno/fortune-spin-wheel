@@ -1,5 +1,7 @@
+import { FortuneSpinWheel } from './components/FortuneSpinWheel/FortuneSpinWheel';
+
 function App() {
-    return <></>;
+  return <FortuneSpinWheel />;
 }
 
 export default App;
