@@ -1,4 +1,6 @@
-export const FORTUNE_ITEMS = [
+import { FortuneItemType } from '../types';
+
+export const DEFAULT_FORTUNE_ITEMS: FortuneItemType[] = [
   { id: 1, color: '#FF0000', value: '100' },
   { id: 2, color: '#0000FF', value: '200' },
   { id: 3, color: '#008000', value: '300' },

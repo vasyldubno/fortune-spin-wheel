@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.value {
+  margin: 0;
+  padding: 0;
+}
+
+.shareButton {
+  width: 25px;
+  height: 25px;
+}

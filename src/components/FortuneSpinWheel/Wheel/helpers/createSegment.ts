@@ -1,3 +1,12 @@
+/**
+ * Creates a segment of a circle with the given index, radius, and segment angle.
+ *
+ * @param {number} index - The index of the segment.
+ * @param {number} radius - The radius of the circle.
+ * @param {number} segmentAngle - The angle of the segment in degrees.
+ * @return {string} The SVG path data for the segment.
+ */
+
 import { polarToCartesian } from './polarToCartesian';
 
 interface CreateSegmentParams {

@@ -1,16 +1,26 @@
+/**
+ * Renders a wheel component with fortune items and their corresponding colors and values.
+ *
+ * @param {WheelProps} props - The props object containing the rotation angle of the wheel.
+ * @param {number} props.rotate - The rotation angle of the wheel in degrees.
+ * @return {JSX.Element} The rendered wheel component.
+ */
+
 import { FC } from 'react';
 import styles from './Wheel.module.css';
-import { FORTUNE_ITEMS } from '../../../constants';
 import { createSegment } from './helpers/createSegment';
 import { getTextPosition } from './helpers/getTextPosition';
 import { getTextRotation } from './helpers/getTextRotation';
+import { useFortuneItemsContext } from '@/context/fortuneContext';
 
 interface WheelProps {
   rotate: number;
 }
 
 export const Wheel: FC<WheelProps> = ({ rotate }) => {
-  const segments = FORTUNE_ITEMS.length;
+  const { fortuneItems } = useFortuneItemsContext();
+
+  const segments = fortuneItems.length;
   const radius = 200;
   const segmentAngle = 360 / segments;
 
@@ -23,7 +33,7 @@ export const Wheel: FC<WheelProps> = ({ rotate }) => {
       }}
       className={styles.svg}
     >
-      {FORTUNE_ITEMS.map((item, index) => (
+      {fortuneItems.map((item, index) => (
         <g key={item.id}>
           <path
             d={createSegment({ index, radius, segmentAngle })}
